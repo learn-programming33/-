@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هيا نتعلم</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+  function showWriteLetters() {
+    document.getElementById("start-page").style.display = "none";
+    document.getElementById("letters-page").style.display = "none";
+    document.getElementById("write-letters-page").style.display = "grid";
+
+    const letters = ["أ", "ب", "ت", "ث", "ج", "ح", "خ", "د", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م", "ن", "ه", "و", "ي"];
+
+    const lettersList = document.getElementById("letters-list");
+
+    // Show the first letter
+    const currentLetter = letters[0];
+    const letterElement = document.createElement("li");
+    letterElement.innerText = currentLetter;
+    lettersList.appendChild(letterElement);
+
+    // Create "التالي" (Next) button
+    const nextButton = document.createElement("button");
+    nextButton.innerText = "التالي";
+    nextButton.onclick = function() {
+      // Remove the current letter element
+      lettersList.removeChild(letterElement);
+
+      // Get the next letter index
+      const nextIndex = letters.indexOf(currentLetter) + 1;
+      const nextLetter = letters[nextIndex];
+
+      // Create a new element for the next letter
+      const nextLetterElement = document.createElement("li");
+      nextLetterElement.innerText = nextLetter;
+      lettersList.appendChild(nextLetterElement);
+
+      // Disable the button if it's the last letter
+      if (nextIndex === letters.length - 1) {
+        nextButton.disabled = true;
+      }
+    };
+
+    // **Removed this line:**
+    // lettersList.appendChild(nextButton);
+
+    // Add "التالي" (Next) button to the list (only once)
+    lettersList.appendChild(nextButton);
+  }
+
+  function closeWriteLettersPage() {
+    document.getElementById("write-letters-page").style.display = "none";
+    document.getElementById("letters-page").style.display = "grid";
+  }
+
+  function showListenLetters() {
+    document.getElementById("letters-page").style.display = "none";
+    document.getElementById("listen-letters-page").style.display = "grid";
+  }
+
+  function closeListenLettersPage() {
+    document.getElementById("listen-letters-page").style.display = "none";
+    document.getElementById("letters-page").style.display = "grid";
+  }
+
+  function showNumbers() {
+    document.getElementById("start-page").style.display = "none";
+    document.getElementById("numbers-page").style.display = "grid";
+  }
+
+  function closeNumbersPage() {
+    document.getElementById("numbers-page").style.display = "none";
+    document.getElementById("start-page").style.display = "grid";
+  }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box head">تعلم اللغة العربية</div>
+    <div class="box nav">
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+        <li><a href="about.html">من نحن</a></li>
+      </ul>
+    </div>
+    <div class="box content">
+      <div id="main-page">
+        <h1> هيا نتعلم</h1>
+        <button onclick="openStartPage()">ابدأ</button>
+      </div>
+
+      <div id="start-page" >
+        <h2>اختر ما تريد تعلمه:</h2>
+        <ul>
+          <li onclick="showLetters()">الحروف</li>
+          <li onclick="showNumbers()">الأرقام</li>
+        </ul>
+        <button onclick="closeStartPage()">رجوع

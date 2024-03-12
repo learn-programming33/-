@@ -1,0 +1,193 @@
+/*  // this use to set backround Dark
+    // background: #000 center/cover url("../pictures/backgroundimage.png") no-repeat;
+    grid-template-columns: 50% 50%; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(N-of columns, How many tall of columns);
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    grid-gap: 10px;
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-column: Start/End;
+    grid-column: 1/5;
+
+*/
+
+body {
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1 {
+    color: blue;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    font-weight: bold;
+}
+
+#main-page, #start-page, #showLetters,#write-letters-page, #listen-letters-page, #numbers-page {
+    /* display: grid; */
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 70vw;
+}
+
+
+
+#start-page, #showLetters, #write-letters-page, #listen-letters-page, #numbers-page {
+display: none;
+}
+#main-page, #start-page, #showLetters, #write-letters-page, #listen-letters-page, #numbers-page{
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+#start-page, #letters-page, #write-letters-page, #listen-letters-page, #numbers-page {
+    display: none;
+    }
+
+#start-page, #letters-page {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#showLetters ul, #write-letters-page ul, #listen-letters-page ul, #numbers-page ul {
+list-style: none;
+padding: 0;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(10, minmax(50px, auto));
+justify-content: center;
+align-items: center;
+
+}
+
+#showLetters ul li, #write-letters-page ul li, #listen-letters-page ul li, #numbers-page ul li {
+height: 50px;
+padding: 10px 15px;
+margin: 5px 0;
+border: 1px solid #433333;
+cursor: pointer;
+font-size: 50px;
+}
+
+/* #write-letters-page {
+    display: grid;
+    grid-template-areas: 
+    "litter litter litter"
+    "write write write"
+    ;
+}*/
+
+
+
+/* #letter {
+    grid-area: letter;
+    height: 100%;
+    width: 100%;
+    background-color: #590909;
+}  */
+
+
+#special-letter {
+    display: grid;
+    grid-template-areas: 
+    "letter"
+    ;
+}
+
+
+
+
+
+
+
+#showLetters ul li:hover, #write-letters-page ul li:hover, #listen-letters-page ul li:hover, #numbers-page ul li:hover{ 
+background-color: #ddd;
+}
+.container {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-auto-rows: minmax(200px , auto);
+    grid-template-areas: 
+    "head head nav nav nav"
+    "cont cont cont cont cont"
+    "cont cont cont cont cont"
+    "cont cont cont cont cont"
+    "foot foot foot foot foot";
+    row-gap: 10px;
+}
+.box {
+    background-color: darkcyan;
+    text-align: center;
+    color: black;
+    display: flex; 
+     justify-content: center;
+    align-items: center;
+}
+
+.head {
+    grid-area: head;
+    font-size: 50px;
+    height: 200px;
+    justify-content: center;
+    background-color: #0c0c0c;
+    color: #fff;
+    background: linear-gradient(-22deg, black 50%, #590909 50%);
+    /* background-image: linear-gradient(50%); */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+} 
+.nav {
+    grid-area: nav;
+    grid-gap: 0;
+    justify-content: left;
+
+
+
+
+}
+.nav ul  {
+    display: inline-block;
+    list-style: none;
+}
+.nav ul li {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    margin-left: 20px;
+
+}
+.nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+}
+.content {
+    grid-area: cont;
+    background-image: url("../pictures/backgroundimage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+ /* .sideright {
+    grid-area: sr;
+    width: 100px;
+    justify-self: right;
+}  */
+
+
+
+.footer {
+    grid-area: foot;
+} 
+

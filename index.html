@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هيا نتعلم</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+        function showWriteLetters() {
+    const letters = ["أ", "ب", "ت", "ث", "ج", "ح", "خ", "د", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م", "ن", "ه", "و", "ي"];
+
+    const lettersList = document.getElementById("letters-list");
+
+    for (let i = 0; i < letters.length; i++) {
+        const letter = document.createElement("li");
+        letter.innerText = letters[i];
+        lettersList.appendChild(letter);
+}
+}
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box head">تعلم اللغة العربية</div>
+        <div class="box nav">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+                <li><a href="about.html">من نحن</a></li>
+            </ul>
+        </div>
+        <div class="box content">
+            <div id="main-page">
+                <h1> هيا نتعلم</h1>
+                <button onclick="openStartPage()">ابدأ</button>
+            </div>
+            
+            <div id="start-page" >
+                <h2>اختر ما تريد تعلمه:</h2>
+                <ul>
+                        <li onclick="showLetters()">الحروف</li>
+                        <!-- <li onclick="showListenLetters()">الحروف</li> -->
+                <!-- <button onclick="closeStartPage()">رجوع</button> -->
+                        <li onclick="showNumbers()">الأرقام</li>
+                </ul>
+                <button onclick="closeStartPage()">رجوع</button>
+            </div>
+
+            <div id="letters-page" >
+                <ul>
+                    <li onclick="showWriteLetters()">تعلم الحروف العربية</li>
+                    <li onclick="showListenLetters()">إستماع الحروف العربية</li>
+                </ul>
+                <!-- <h2>تعلم الحروف العربية</h2>
+                <ul id="letters-list"></ul>
+                <button onclick="showWriteLetters()">عرض الحروف</button>-->
+                <button onclick="closeLettersPage()">رجوع</button> 
+            </div>
+
+             <div id="write-letters-page">
+                <h2 onclick="showWriteLetters()">تعلم الحروف العربية</h2>
+                <ul id="letters-list"></ul>
+                <!-- <button onclick="showWriteLetters()">عرض الحروف</button> -->
+                <button onclick="closeWriteLettersPage()"> رجوع</button>
+            </div> 
+
+        
+
+            <div id="special-letter"></div>
+            <div id="listen-letters-page">
+                <h2>إستماع الحروف العربية</h2>
+                <ul>
+                    <li>أ</li>
+                    <li>ب</li>
+                    <li>ت</li>
+                    <li>ث</li>
+                    <li>ج</li>
+                    <li>ح</li>
+                    <li>خ</li>
+                    <li>د</li>
+                    <li>ذ</li>
+                    <li>ر</li>
+                    <li>ز</li>
+                    <li>س</li>
+                    <li>ش</li>
+                    <li>ص</li>
+                    <li>ض</li>
+                    <li>ط</li>
+                    <li>ظ</li>
+                    <li>ع</li>
+                    <li>غ</li>
+                    <li>ف</li>
+                    <li>ق</li>
+                    <li>ك</li>
+                    <li>ل</li>
+                    <li>م</li>
+                    <li>ن</li>
+                    <li>ه</li>
+                    <li>و</li>
+                    <li>ي</li>
+                </ul>
+                <button onclick="closeListenLettersPage()">رجوع</button>
+            </div>
+            
+            <div id="numbers-page" >
+                <h2>تعلم الأرقام العربية</h2>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                </ul>
+                <button onclick="closeNumbersPage()">رجوع</button>
+            </div>
+
+            </div>
+
+            
+            
+        </div>
+        <div class="box footer">&copy; 2024 Doned By SALAH SAMEER</div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
